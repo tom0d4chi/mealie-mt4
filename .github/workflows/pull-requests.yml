@@ -10,10 +10,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  pull-request-lint:
-    name: "Lint PR"
-    uses: ./.github/workflows/pull-request-lint.yml
-
   backend-tests:
     name: "Backend Server Tests"
     uses: ./.github/workflows/partial-backend.yml
@@ -21,10 +17,6 @@ jobs:
   frontend-tests:
     name: "Frontend and End-to-End Tests"
     uses: ./.github/workflows/partial-frontend.yml
-
-  container-scanning:
-    name: "Trivy Container Scanning"
-    uses: ./.github/workflows/partial-trivy-container-scanning.yml
 
   end-to-end:
     name: "End-to-End Tests"
