@@ -4,7 +4,7 @@ name: Release Drafter
 on:
   push:
     branches:
-      - mealie-next
+      - workflow
   # pull_request event is required for autolabeler
   pull_request:
     types: [opened, labeled, unlabeled, reopened, synchronize]

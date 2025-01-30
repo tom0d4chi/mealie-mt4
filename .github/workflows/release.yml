@@ -1,6 +1,9 @@
 name: Docker Build Production
 
 on:
+  push:
+    branches:
+      - workflow
   release:
     types: [published]
 
