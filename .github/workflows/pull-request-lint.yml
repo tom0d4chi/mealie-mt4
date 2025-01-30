@@ -5,7 +5,7 @@ on:
   pull_request:
     types: [edited] # This captures the PR title changing
     branches:
-      - mealie-next
+      - workflow
 
 jobs:
   validate-title:
