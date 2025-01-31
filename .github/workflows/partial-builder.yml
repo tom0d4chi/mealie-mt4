@@ -35,24 +35,3 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Override __init__.py
-        run: |
-          echo "__version__ = \"${{ inputs.tag }}\"" > ./mealie/__init__.py
-
-      - name: Set up Depot
-        uses: depot/setup-action@v1
-
-      - name: Build and push Docker image, via Depot.dev
-        uses: depot/build-push-action@v1
-        with:
-          project: srzjb6mhzm
-          file: ./docker/Dockerfile
-          context: .
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            hkotel/mealie:${{ inputs.tag }}
-            ghcr.io/${{ github.repository }}:${{ inputs.tag }}
-            ${{ inputs.tags }}
-          build-args: |
-            COMMIT=${{ github.sha }}
