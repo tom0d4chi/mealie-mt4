@@ -163,3 +163,6 @@ dev/code-generation/openapi.json
 
 .run/
 .task/*
+
+
+terraform.tfvars
